@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+/*  FIZENG skin for LREC viewer  */
+
+*:root {
+    font-size: 12pt;
+    line-height: 1.5;
+    font-family: "M+ 1c", FandolSong, STSong, serif;
+    font-weight: 300;
+    font-variant: normal;
+}
+
+/*  Dictionary Layout  */
+
+#dictionary-subtite:empty, #dictionary-description:empty, #dictionary-description:empty + hr, #dictionary-splash:empty, #dictionary-author:empty, #dictionary-date:empty, #dictionary-frame:not([src]) {
+    display: none;
+}
+
+#dictionary-root {
+    margin: 0;
+    background: #cccccc;
+    color: #1c1c1c;
+    border-color: #a3a3a3;
+}
+
+#dictionary-body {
+}
+
+#dictionary-header {
+    background: #f5f5f5;
+}
+
+#dictionary-title {
+    font-weight: bolder;
+}
+
+#dictionary-title-link {
+}
+
+#dictionary-subtitle {
+}
+
+#dictionary-topbar {
+    border-color: #0c0c0c;
+    background: #f5f5f5;
+}
+
+#dictionary-splash {
+}
+
+#dictionary-sidebar {
+    border-width: thin;
+    border-color: #0c0c0c;
+    background: #f5f5f5;
+}
+
+#dictionary-description {
+}
+
+#dictionary-search-and-navigation {
+}
+
+#dictionary-search {
+    box-sizing: border-box;
+    margin: 0;
+    width: 100%;
+    font-size: 11pt;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+#dictionary-tags {
+    box-sizing: border-box;
+    margin: 0;
+    width: 100%;
+    font-size: 11pt;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+#dictionary-tags > optgroup::before {
+    font-weight: bolder;
+    content: attr(label) ":";
+}
+
+#dictionary-tags * {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+#dictionary-navigation {
+}
+
+#dictionary-navigation > a {
+}
+
+#dictionary-navigation > a:hover {
+    background: white;
+}
+
+#dictionary-content {
+    border-width: thin;
+    border-color: #0c0c0c;
+    background: #f5f5f5;
+}
+
+#dictionary-frame {
+}
