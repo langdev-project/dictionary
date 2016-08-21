@@ -153,7 +153,7 @@ Dictionary.init = function(e) {
         if (Dictionary.lrec.lexemes[thing].language) as[i].lang = Dictionary.lrec.lexemes[thing].language;
         as[i].dataset.tags = JSON.stringify(Dictionary.lrec.lexemes[thing].tags);
         as[i].dataset.alternates = JSON.stringify(Dictionary.lrec.lexemes[thing].alternates);
-        if (Dictionary.lrec.lexemes[thing].pronunciation) as[i].dataset.pronunciation = Dictionary.lrec.lexemes[thing].pronunciation;
+        as[i].dataset.pronunciation = JSON.stringify(Dictionary.lrec.lexemes[thing].pronunciation);
         for (inflection in Dictionary.lrec.lexemes[thing].inflections) {
             i = as.length;
             as[i] = document.createElement("a");
@@ -163,7 +163,7 @@ Dictionary.init = function(e) {
             if (Dictionary.lrec.lexemes[thing].language) as[i].lang = Dictionary.lrec.lexemes[thing].language;
             as[i].dataset.tags = JSON.stringify(Dictionary.lrec.lexemes[thing].tags);
             as[i].dataset.alternates = JSON.stringify(Dictionary.lrec.lexemes[thing].inflections[inflection].alternates);
-            if (Dictionary.lrec.lexemes[thing].inflections[inflection].pronunciation) as[i].dataset.pronunciation = Dictionary.lrec.lexemes[thing].inflections[inflection].pronunciation;
+            as[i].dataset.pronunciation = JSON.stringify(Dictionary.lrec.lexemes[thing].inflections[inflection].pronunciation);
         }
     }
 
