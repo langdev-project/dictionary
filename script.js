@@ -129,6 +129,7 @@ Dictionary.init = function(e) {
     var i;
     var inflection;
     var thing;
+    var things;
     var words;
     var element;
 
@@ -182,19 +183,24 @@ Dictionary.init = function(e) {
 
     //  Adds tag-groups:
 
+    things = {};
     for (thing in Dictionary.lrec.groups) {
         element = document.createElement("OPTGROUP");
         element.label = thing;
         if (Dictionary.lrec.groups[thing].description) element.title = Dictionary.lrec.groups[thing].description;
+        things[thing] = element;
+    }
+    for (thing in Dictionary.lrec.groups) {
         if (Dictionary.lrec.groups[thing].parent) {
-            for (i = 0; i < document.getElementById("dictionary-tags").children.length; i++) {
-                if (document.getElementById("dictionary-tags").children.item(i).tagName.toUpperCase() === "OPTGROUP" && document.getElementById("dictionary-tags").children.item(i).label.toLowerCase() === Dictionary.lrec.groups[thing].parent.toLowerCase()) {
-                    document.getElementById("dictionary-tags").children.item(i).appendChild(element);
+            for (i = 0; i < things.length; i++) {
+                if (things[i].label.toLowerCase() === Dictionary.lrec.groups[thing].parent.toLowerCase()) {
+                    things[i].appendChild(element);
                     break;
                 }
             }
         }
-        else document.getElementById("dictionary-tags").appendChild(element);
+        else
+        document.getElementById("dictionary-tags").appendChild(element);
     }
 
     //  Adds tags:
