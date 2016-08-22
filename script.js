@@ -181,7 +181,7 @@ Dictionary.init = function(e) {
         document.getElementById("dictionary-navigation").appendChild(as[words[i].index]);
     }
 
-    //  Adds tag-groups:
+    //  Adds tags and tag-groups:
 
     things = {};
     for (thing in Dictionary.lrec.groups) {
@@ -190,26 +190,16 @@ Dictionary.init = function(e) {
         if (Dictionary.lrec.groups[thing].description) element.title = Dictionary.lrec.groups[thing].description;
         things[thing] = element;
     }
-    for (thing in Dictionary.lrec.groups) {
-        if (Dictionary.lrec.groups[thing].parent) things[Dictionary.lrec.groups[thing].parent].appendChild(things[thing]);
-        else document.getElementById("dictionary-tags").appendChild(things[thing]);
-    }
-
-    //  Adds tags:
-
     for (thing in Dictionary.lrec.tags) {
         element = document.createElement("OPTION");
         element.value = thing;
         element.textContent = thing;
-        if (Dictionary.lrec.tags[thing].parent) {
-            for (i = 0; i < document.getElementById("dictionary-tags").children.length; i++) {
-                if (document.getElementById("dictionary-tags").children.item(i).tagName.toUpperCase() === "OPTGROUP" && document.getElementById("dictionary-tags").children.item(i).label.toLowerCase() === Dictionary.lrec.tags[thing].parent.toLowerCase()) {
-                    document.getElementById("dictionary-tags").children.item(i).appendChild(element);
-                    break;
-                }
-            }
-        }
+        if (Dictionary.lrec.tags[thing].parent) things[Dictionary.lrec.tags[thing].parent].appendChild(element)
         else document.getElementById("dictionary-tags").appendChild(element);
+    }
+    for (thing in Dictionary.lrec.groups) {
+        if (Dictionary.lrec.groups[thing].parent) things[Dictionary.lrec.groups[thing].parent].appendChild(things[thing]);
+        else document.getElementById("dictionary-tags").appendChild(things[thing]);
     }
 
     //  Displays search and tags:
