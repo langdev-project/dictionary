@@ -191,16 +191,8 @@ Dictionary.init = function(e) {
         things[thing] = element;
     }
     for (thing in Dictionary.lrec.groups) {
-        if (Dictionary.lrec.groups[thing].parent) {
-            for (i = 0; i < things.length; i++) {
-                if (things[i].label.toLowerCase() === Dictionary.lrec.groups[thing].parent.toLowerCase()) {
-                    things[i].appendChild(element);
-                    break;
-                }
-            }
-        }
-        else
-        document.getElementById("dictionary-tags").appendChild(element);
+        if (Dictionary.lrec.groups[thing].parent) things[thing].appendChild(element);
+        else document.getElementById("dictionary-tags").appendChild(element);
     }
 
     //  Adds tags:
