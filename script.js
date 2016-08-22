@@ -191,8 +191,8 @@ Dictionary.init = function(e) {
         things[thing] = element;
     }
     for (thing in Dictionary.lrec.groups) {
-        if (Dictionary.lrec.groups[thing].parent) things[thing].appendChild(element);
-        else document.getElementById("dictionary-tags").appendChild(element);
+        if (Dictionary.lrec.groups[thing].parent) things[Dictionary.lrec.groups[thing].parent].appendChild(things[thing]);
+        else document.getElementById("dictionary-tags").appendChild(things[thing]);
     }
 
     //  Adds tags:
