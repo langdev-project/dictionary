@@ -189,6 +189,7 @@ Dictionary.init = function(e) {
         element.label = thing;
         if (Dictionary.lrec.groups[thing].description) element.title = Dictionary.lrec.groups[thing].description;
         things[thing] = element;
+        document.getElementById("dictionary-tags").appendChild(things[thing]);
     }
     for (thing in Dictionary.lrec.tags) {
         element = document.createElement("OPTION");
@@ -202,7 +203,6 @@ Dictionary.init = function(e) {
             document.getElementById("dictionary-tags").insertBefore(things[thing], things[Dictionary.lrec.groups[thing].parent].nextSibling);
             things[thing].className = "subgroup";
         }
-        else document.getElementById("dictionary-tags").appendChild(things[thing]);
     }
 
     //  Displays search and tags:
