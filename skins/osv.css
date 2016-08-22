@@ -5,7 +5,7 @@
 *:root {
     font-size: 14pt;
     line-height: 1.35;
-    font-family: Junicode, Cardo, Iowan Old Style, serif;
+    font-family: Junicode, Cardo, "Iowan Old Style", serif;
     font-variant-numeric: oldstyle-nums;
 }
 
@@ -87,11 +87,16 @@
     border: none;
     padding: 0;
     background: #CCCCCC;
+    overflow: auto;
 }
 
 #dictionary-tags > optgroup::before {
     text-align: center;
     content: attr(label) ":";
+}
+
+#dictionary-tags > optgroup.subgroup {
+    padding-left: .8em;
 }
 
 #dictionary-tags * {

@@ -198,7 +198,10 @@ Dictionary.init = function(e) {
         else document.getElementById("dictionary-tags").appendChild(element);
     }
     for (thing in Dictionary.lrec.groups) {
-        if (Dictionary.lrec.groups[thing].parent) things[Dictionary.lrec.groups[thing].parent].appendChild(things[thing]);
+        if (Dictionary.lrec.groups[thing].parent) {
+            document.getElementById("dictionary-tags").insertBefore(things[thing], things[Dictionary.lrec.groups[thing].parent].nextSibling);
+            things[thing].className = "subgroup";
+        }
         else document.getElementById("dictionary-tags").appendChild(things[thing]);
     }
 
