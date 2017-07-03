@@ -17,11 +17,11 @@ var Dictionary = {
 
 var LRECs = {
     "": {collator: undefined, location: "index.lrec", skin: "about:blank"},
-    "osv-0010": {collator: new Intl.Collator(["art-Latn-x-osv-0010", "no", "da"], {sensitivity: "base"}), location: "../data/languages/jsv/osv/0010/index.lrec", skin: "skins/osv.css"},
-    "osv-0011": {collator: new Intl.Collator(["art-Latn-x-osv-0011", "no", "da"], {sensitivity: "base"}), location: "../data/languages/jsv/osv/0011/index.lrec", skin: "skins/osv.css"},
-    "osv-0012": {collator: new Intl.Collator(["art-Latn-x-osv-0012", "no", "da"], {sensitivity: "base"}), location: "../data/languages/jsv/osv/0012/index.lrec", skin: "skins/osv.css"},
-    "fiz-1der": {collator: new Intl.Collator("art-Latn-x-fiz-1der"), location: "../data/languages/fzn/fiz/1der/index.lrec", skin: "skins/fiz.css"},
-    "fiz-1der/characters": {collator: new Intl.Collator("art-Latn-x-fiz-1der-block000"), location: "../data/languages/fzn/fiz/1der/characters.lrec", skin: "skins/fiz.css"}
+    "osv-0010": {collator: new Intl.Collator(["art-Latn-x-osv-0010", "no", "da"], {sensitivity: "base"}), location: "../jsv/osv/0010/index.lrec", skin: "skins/osv.css"},
+    "osv-0011": {collator: new Intl.Collator(["art-Latn-x-osv-0011", "no", "da"], {sensitivity: "base"}), location: "../jsv/osv/0011/index.lrec", skin: "skins/osv.css"},
+    "osv-0012": {collator: new Intl.Collator(["art-Latn-x-osv-0012", "no", "da"], {sensitivity: "base"}), location: "../jsv/osv/0012/index.lrec", skin: "skins/osv.css"},
+    "fiz-1der": {collator: new Intl.Collator("art-Latn-x-fiz-1der"), location: "../fzn/fiz/1der/index.lrec", skin: "skins/fiz.css"},
+    "fiz-1der/characters": {collator: new Intl.Collator("art-Latn-x-fiz-1der-block000"), location: "../fzn/fiz/1der/characters.lrec", skin: "skins/fiz.css"}
 }
 
 var Query = {
@@ -240,7 +240,7 @@ Query.get = function(property) {
 }
 
 Query.handle = function() {
-    var d = Query.get("lrec");
+    var d = Query.get("language");
     if (d && LRECs[d]) Dictionary.id = d;
     else Dictionary.id = "";
     Dictionary.lrec = new LREC(LRECs[Dictionary.id].location);
